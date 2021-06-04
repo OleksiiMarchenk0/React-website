@@ -9,13 +9,13 @@ import {
   HeroP,
   HeroBtnWrapper,
   ArrowForward,
-  ArrowRight
+  ArrowRight,
 } from "./HeroElements";
-import {Button} from '../ButtonElement';
+import { Button } from "../ButtonElement";
 const HeroSection = () => {
   const [hover, setHover] = useState(false);
   const onHover = () => {
-      setHover(!hover)
+    setHover(!hover);
   };
   return (
     <HeroContainer id="home">
@@ -29,12 +29,24 @@ const HeroSection = () => {
           your next payments{" "}
         </HeroP>
         <HeroBtnWrapper>
-          <Button to="signup" onMouseEnter = {onHover} onMouseLeave = {onHover} primary="true" dark="true">
+          <Button
+            to="signup"
+            onMouseEnter={onHover}
+            onMouseLeave={onHover}
+            primary="true"
+            dark="true"
+            smooth={true}
+            duration={500}
+            spy={true}
+            exact="true"
+            offset={-80}
+            activeClass="active"
+          >
             Get started {hover ? <ArrowForward /> : <ArrowRight />}
           </Button>
         </HeroBtnWrapper>
       </HeroContent>
-    </HeroContainer>
+    </HeroContainer> 
   );
 };
 
